@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {fetchData} from './api';
+import {fetchSummaryData} from './api';
 import {Cards, Chart, CountryPicker} from './components';
 import styles from './App.module.css';
 
@@ -12,9 +12,10 @@ class App extends React.Component{
     }
     
     async componentDidMount(){
-        const fetchedData = await fetchData();
+        const fetchedData = await fetchSummaryData();
 
         this.setState({data:fetchedData})
+        console.table(fetchedData);
     }
 
     render(){
