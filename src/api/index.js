@@ -17,7 +17,7 @@ export const fetchDailyData = async () => {
     try {
         const {data} = await axios.get(`${json_url}/daily`);
        
-        console.log(data)
+        // console.log(data)
 
         const modifiedData = data.map((dailyData)=>({
             confirmed: dailyData.confirmed.total,

@@ -15,7 +15,7 @@ class App extends React.Component{
         const fetchedData = await fetchSummaryData();
 
         this.setState({data:fetchedData})
-        console.table(fetchedData);
+        // console.table(fetchedData);
     }
 
     render(){

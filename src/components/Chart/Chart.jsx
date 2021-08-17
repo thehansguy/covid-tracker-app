@@ -10,19 +10,20 @@ const Chart = () => {
     useEffect(()=>{
         const fetchAPI = async ()=>{
            setDailyData( await fetchDailyData());
+       
         }
 
-        console.table(dailyData);
+        // console.table(dailyData);
 
         fetchAPI();
-    })
+    },[])
 
     const lineChart = (
        dailyData.length 
        ? (
           <Line 
             data ={{
-                labels: dailyData.map(({date})=>date),
+                labels: dailyData.map(({date})=>date),          
                 datasets: [{
                     data: dailyData.map(({confirmed})=>confirmed),
                     label: 'Infected',
